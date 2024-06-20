@@ -4,24 +4,6 @@ import './App.css';
 import Todo from './Todo.jsx'
 import {getMouseEventProps} from "@testing-library/user-event/dist/keyboard/getEventProps";
 import { nanoid } from "nanoid";
-import Countd from './Countd.jsx'
-
-// function message(){
-//     alert("Hello, "+ "user" + ".")
-// }
-
-/*function handleSubmit(e: { preventDefault: () => void; target: any; }) {
-    // Prevent the browser from reloading the page
-    e.preventDefault();
-
-    // Read the form data
-    const form = e.target;
-    const formData = new FormData(form);
-
-    const formJson = Object.fromEntries(formData.entries());
-    alert(""+formJson);
-}*/
-
 
 function App(props: { tasks: any; }) {
     const [Task, setTask] = useState(''); // Declare a state variable
@@ -73,8 +55,6 @@ function App(props: { tasks: any; }) {
     const handleChange = (e: { currentTarget: { value: React.SetStateAction<string>; }; }) => {
         setInput(e.currentTarget.value)
     }
-    //<button className={"button"}>Test</button>
-    //<button id={"myButton"}  ref={"Countd.tsx"}> Countdown </button>
     return (
     <div className={"App-main"}>
 
@@ -82,13 +62,11 @@ function App(props: { tasks: any; }) {
           TASK LIST
         </header>
 
-        <p className="App-link">This is an extension made through react.
+        <p className="App-link">This is an extension to keep track of your tasks.
             <hr/>
             <form method={"post"} onSubmit={handleSubmit}>
                 <label>
-                    Enter a task: <input name="myInput" value={userInput} // force the input's value to match the state variable
-                    //onChange={e => setTask(e.target.value)} // ... and update the state variable on any edits
-                    //onSubmit = {e => setTask(e.currentTarget.value)}
+                    Enter a task: <input name="myInput" value={userInput} 
                     onChange={handleChange}
                 />
                 </label>
